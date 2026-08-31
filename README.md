@@ -1,114 +1,84 @@
-# Witcopy Website
+# WitCopy — Extract Any Text
 
-The official companion landing page for the [Witcopy Chrome Extension](../README.md). Built entirely with vanilla HTML, CSS, and JavaScript — no frameworks or build tools required.
-
-**Live URL:** [witcopy.vercel.app](https://witcopy.vercel.app)
+A powerful, premium Chrome Extension (Manifest V3) that allows you to copy text from difficult sources on the web, including images (OCR), hyperlinks, and specific visual areas regardless of the underlying DOM structure.
 
 ---
 
-## 📁 Folder Structure
+## 🚀 Features
 
-```
-website/
-├── index.html              # Main landing page
-├── style.css               # All styles (dark theme, animations, layout)
-├── script.js               # Interactive playground and FAQ accordion logic
-├── logo.webp               # Hero section brand logo
-├── witcopy-extension.zip   # Pre-built extension ZIP for download
-└── pages/
-    ├── contact.html        # Contact form page
-    └── feedback.html       # User feedback / rating page
-```
+### 1. ✂️ Selected Area (`ALT + S`)
+- **Spatial DOM Analysis**: Draw a selection box around any part of the screen to copy only the text inside that area.
+- **TreeWalker Parsing**: Works by spatially analyzing text nodes (using `TreeWalker`) relative to your selection box.
+- **Clean Extraction**: Great for copying columns, sidebars, or specific data points without grabbing surrounding clutter.
 
----
+### 2. 🔍 Copy from Image (`ALT + I`)
+Draw a selection box around any image area on the screen to extract its text using a dual-engine approach:
+- **Gemini 2.5 Flash API**: High-accuracy, high-speed multimodal AI engine (requires a Gemini API key).
+- **Tesseract.js**: Offline fallback engine running fully locally in the browser if no API key is set.
 
-## 📄 Pages
+### 3. 🔗 Copy from Link (`ALT + L`)
+- **Zero-Navigation Copy**: Enables a selection mode where you can hover over and click any hyperlink on the page to instantly copy its text content to your clipboard without triggering navigation.
 
-### `index.html` — Main Landing Page
-
-The primary entry point. Contains all major sections:
-
-| Section | Anchor | Description |
-|---|---|---|
-| **Navbar** | — | Fixed top nav with links and "Download ZIP" CTA |
-| **Hero** | `#` | Headline, description, download CTA, animated browser mockup |
-| **Features** | `#features` | 4 feature cards with icons and keyboard shortcut badges |
-| **Setup Guide** | `#guide` | 2-column step-by-step installation and usage guide |
-| **Live Playground** | `#playground` | Interactive sandbox simulating the 3 core modes |
-| **Tech Specs** | `#specs` | Architecture highlights (privacy, MV3, CSP bypass) |
-| **FAQ** | `#faq` | Accordion-style frequently asked questions |
-| **Footer** | — | Brand info, nav links, creator profile card |
-
-### `pages/contact.html` — Contact Page
-
-Form-based page allowing users to get in touch with the developer.
-
-### `pages/feedback.html` — Feedback Page
-
-Allows users to rate the extension and leave written feedback.
+### 4. ⏳ Popup Copy History
+- **Embedded Panel**: A compact, slide-over panel embedded directly inside the extension popup window.
+- **Real-Time Search**: Search matches text content, badge label, or webpage title.
+- **1-Click Card Actions**: Copy and delete actions directly on each history card.
+- **Secure Persistence**: Persisted locally in `chrome.storage.local`.
 
 ---
 
-## 🎨 Design System
+## 🛠️ Installation
 
-| Token | Value | Usage |
-|---|---|---|
-| Primary Font | `Inter` (Google Fonts) | Body text |
-| Display Font | `Outfit` (Google Fonts) | Headings and brand name |
-| Icons | Font Awesome 6.4 | All UI icons |
-| Theme | Dark mode | Background `#0a0a0f`, surface `#111118` |
-| Accent | Indigo/Violet gradient | CTAs, highlights, gradient text |
+1. **Clone or Download** this repository to your local machine.
+2. Open Google Chrome and navigate to `chrome://extensions/`.
+3. **Enable Developer mode** by toggling the switch in the top-right corner.
+4. Click the **Load unpacked** button.
+5. Select the folder containing `manifest.json` (the root of this project).
 
 ---
 
-## 🎮 Interactive Playground (`script.js`)
+## 🖥️ Usage
 
-The live playground section simulates the extension's three core modes in-browser without requiring installation:
-
-- **Selected Area Mode** — Click and drag on the sandbox to "copy" text blocks from a mock product spec table
-- **Copy from Image (OCR) Mode** — Double-click or draw on a mock image to trigger a simulated OCR scan animation
-- **Copy from Link Mode** — Click mock links to simulate extracting anchor text without navigation
-
-All captured text is logged in a simulated history sidebar with search functionality.
+1. **Pin the extension** to your browser toolbar for easy access.
+2. **Click the extension icon** to open the modern UI popup.
+3. **Choose your desired action**:
+   - **Selected Area**: Click, then click-and-drag on the page to draw a selection box.
+   - **Copy from Image**: Scans all images on the page for text.
+   - **Copy from Link**: Hover and click a link to extract its text content.
+4. **Toggle Settings** (gear icon) to configure and test your Gemini API Key in real time.
 
 ---
 
-## 🚀 Running Locally
+## 💡 Usage Tips & Tricks
 
-This is a static website. No build step required.
+- **Escape Selection**: Press `Esc` key at any time to cancel active selection modes (drawing visual boxes or clicking links).
+- **Direct Copy Highlighted Text**: If you already have text highlighted natively on a webpage, clicking the Selected Area button in the popup copies it immediately without requiring you to draw a box.
+- **Save Navigation in Copy Link Mode**: Use Copy from Link to extract specific URLs or button anchor texts without navigating away from your active tab.
+- **Leverage Gemini 2.5 Flash**: Set up your Gemini API key in settings for faster, higher-accuracy handwriting, coding syntax, and multi-language OCR scans.
+- **Search History**: Use the search input inside the history drawer to quickly retrieve copied code fragments, emails, and links by matching keywords.
+
+---
+
+## ⚙️ Technical Details
+
+- **Manifest V3**: Built on the latest Chrome Extension V3 standard for maximum reliability, speed, and safety.
+- **Dynamic Script Injection**: Injects content scripts dynamically if they are missing (e.g., if the extension was reloaded while a tab was open), preventing script errors.
+- **CSP Bypass Service Worker**: Routes Gemini API requests through the background service worker (`background.js`) to bypass webpage Content Security Policy (CSP) blocks.
+
+---
+
+## 💻 Landing Page & Development
 
 ```bash
-# Option 1: Open directly
-# Just open website/index.html in your browser
+# 1. Install dependencies
+npm install
 
-# Option 2: Use a local server (recommended to avoid CORS issues)
-npx serve .
+# 2. Start Vite development server
+npm run dev
 
-# Or with Python
-python -m http.server 8080
+# 3. Production build & type-check
+npm run build
 ```
-
----
-
-## 🌍 Deployment
-
-The site is deployed on **Vercel** via Git integration. A [`vercel.json`](../vercel.json) at the project root tells Vercel to serve only the `website/` subfolder:
-
-```json
-{
-  "outputDirectory": "website"
-}
-```
-
-This means Vercel ignores the `extension/` source code and only publishes the landing page. Any push to the connected branch triggers an automatic redeploy.
-
----
-
-## 📦 Extension Download
-
-The `witcopy-extension.zip` file in this folder is the pre-built, ready-to-install version of the Chrome extension. It is the file served when users click **"Download ZIP"** on the landing page.
-
-To update it, rebuild the `extension/` folder contents and replace this ZIP file.
 
 ---
 
@@ -118,3 +88,5 @@ To update it, rebuild the `extension/` folder contents and replace this ZIP file
 - GitHub: [@Iamsushantgautam](https://github.com/Iamsushantgautam)  
 - LinkedIn: [iamsushantgautam](https://www.linkedin.com/in/iamsushantgautam)  
 - Portfolio: [sushant.online](https://sushant.online)
+
+
