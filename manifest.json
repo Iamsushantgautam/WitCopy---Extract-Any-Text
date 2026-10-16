@@ -2,9 +2,17 @@
   "manifest_version": 3,
   "name": "Witcopy – Extract Any Text",
   "short_name": "Witcopy",
-  "version": "2.0",
+  "version": "1.0.0",
   "description": "Instantly copy all readable text from any webpage — full page, selected area, canvas elements, and image OCR.",
-  "permissions": ["activeTab", "scripting", "clipboardWrite", "storage"],
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "clipboardWrite",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://generativelanguage.googleapis.com/*"
+  ],
   "action": {
     "default_popup": "popup.html",
     "default_title": "Witcopy – Extract Any Text",
@@ -26,7 +34,9 @@
   },
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
+      "matches": [
+        "<all_urls>"
+      ],
       "js": [
         "lib/tesseract.min.js",
         "ocr.js",
@@ -55,4 +65,3 @@
     }
   }
 }
-

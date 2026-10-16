@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,328 +9,483 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="popup.css">
 </head>
+
 <body>
 
-<div class="container">
+  <div class="container">
 
-  <!-- Header -->
-  <header class="header">
-    <div class="logo-wrap">
-      <img class="logo-img" src="icons/icon32.png" width="34" height="34" alt="Witcopy">
-      <div class="logo-text">
-        <span class="brand-name">Witcopy</span>
-        <span class="version-tag">v2.1 · Text Extractor</span>
-      </div>
-    </div>
-    <div class="header-right">
-      <a href="https://witcopy.vercel.app" target="_blank" class="web-link" title="Visit Witcopy Website">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-          <polyline points="15 3 21 3 21 9"/>
-          <line x1="10" y1="14" x2="21" y2="3"/>
-        </svg>
-      </a>
-      <button class="settings-btn" id="settingsBtn" title="Settings">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="3"/>
-          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-        </svg>
-      </button>
-      <div class="status-dot" id="statusDot" title="Ready"></div>
-    </div>
-  </header>
-
-  <!-- About Founder -->
-  <div class="founder-about">
-    <div class="founder-avatar">SG</div>
-    <div class="founder-info" style="flex: 1;">
-      <span class="founder-name">Sushant Gautam</span>
-      <span class="founder-title">Founder & Developer</span>
-      <span class="founder-desc">Building simple, powerful web tools to boost productivity.</span>
-      <a href="#" id="openTips" class="founder-tips-link">
-        <span>Tips & Tricks</span>
-        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
-      </a>
-    </div>
-    <div class="founder-links">
-      <a href="https://github.com/Iamsushantgautam" target="_blank" class="founder-link" title="GitHub Profile">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-        </svg>
-      </a>
-      <a href="https://sushant.online" target="_blank" class="founder-link" title="Portfolio Website">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"/>
-          <line x1="2" y1="12" x2="22" y2="12"/>
-          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-        </svg>
-      </a>
-    </div>
-  </div>
-
-
-  <!-- Group: Features -->
-  <div class="section-label">Features</div>
-  <div class="actions">
-    <!-- 1. Select Area -->
-    <button id="selectArea" class="btn btn-primary" data-tooltip="Copy highlighted text or draw a box to extract text">
-      <div class="btn-icon">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M5 9V5h4M15 5h4v4M19 15v4h-4M9 19H5v-4"/>
-          <rect x="8" y="8" width="8" height="8" rx="1" stroke-dasharray="3 2"/>
-        </svg>
-      </div>
-      <div class="btn-content">
-        <span class="btn-title">Selected Area <kbd class="hotkey-badge">Alt + S</kbd></span>
-        <span class="btn-desc">Copy selection or draw a box</span>
-      </div>
-      <div class="btn-arrow">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-      </div>
-    </button>
-
-    <!-- 2. Copy Text from Image -->
-    <button id="bulkOCR" class="btn btn-secondary" data-tooltip="Draw a box around an image area to extract its text">
-      <div class="btn-icon">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-          <circle cx="8.5" cy="8.5" r="1.5"/>
-          <polyline points="21 15 16 10 5 21"/>
-        </svg>
-      </div>
-      <div class="btn-content">
-        <span class="btn-title">Copy from Image <kbd class="hotkey-badge">Alt + I</kbd></span>
-        <span class="btn-desc">Draw a box around image to extract</span>
-      </div>
-      <div class="btn-arrow" id="ocrArrow">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-      </div>
-    </button>
-
-    <!-- 3. Copy Text from Link -->
-    <button id="copyLink" class="btn btn-secondary" data-tooltip="Click any link on the page to copy its text">
-      <div class="btn-icon">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
-        </svg>
-      </div>
-      <div class="btn-content">
-        <span class="btn-title">Copy from Link <kbd class="hotkey-badge">Alt + L</kbd></span>
-        <span class="btn-desc">Click any link to copy its text</span>
-      </div>
-      <div class="btn-arrow">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-      </div>
-    </button>
-  </div>
-
-
-  <!-- ─── History Button ──────────────────────────────── -->
-  <button class="history-nav-btn" id="openHistory">
-    <div class="hnb-left">
-      <div class="hnb-icon">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-        </svg>
-      </div>
-      <div class="hnb-text">
-        <span class="hnb-title">Copy History</span>
-        <span class="hnb-sub" id="historySubtitle">Loading…</span>
-      </div>
-    </div>
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-      <polyline points="9 18 15 12 9 6"/>
-    </svg>
-  </button>
-
-  <!-- Toast notification -->
-  <div class="toast" id="toast">
-    <svg class="toast-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="20 6 9 17 4 12"/>
-    </svg>
-    <span id="toastMsg">Copied!</span>
-  </div>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <span>Witcopy</span>
-    <span class="dot">·</span>
-    <span>Extract any text, anywhere</span>
-  </footer>
-
-  <!-- Settings Panel -->
-  <div class="settings-panel" id="settingsPanel">
-    <div class="sp-header">
-      <span class="sp-title">OCR Settings</span>
-      <button class="sp-close" id="settingsCloseBtn" title="Close">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-        </svg>
-      </button>
-    </div>
-    
-    <div class="sp-content">
-      <!-- OCR Mode Switch -->
-      <div class="setting-group">
-        <label class="setting-label">OCR ENGINE</label>
-        <div class="toggle-container">
-          <span class="toggle-text">Gemini 2.5 Flash API</span>
-          <label class="switch">
-            <input type="checkbox" id="useGoogleOcr">
-            <span class="slider"></span>
-          </label>
+    <!-- Header -->
+    <header class="header">
+      <div class="logo-wrap">
+        <img class="logo-img" src="icons/icon32.png" width="34" height="34" alt="Witcopy">
+        <div class="logo-text">
+          <span class="brand-name">Witcopy</span>
+          <span class="version-tag">v1.0.0 · Text Extractor</span>
         </div>
-        <p class="setting-desc">Enabling Gemini API yields superior speed and accuracy for non-English/complex text (requires an API Key). Otherwise, falls back to offline Tesseract.js.</p>
+      </div>
+      <div class="header-right">
+        <a href="https://witcopy.vercel.app" target="_blank" class="web-link" title="Visit Witcopy Website">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+            <polyline points="15 3 21 3 21 9" />
+            <line x1="10" y1="14" x2="21" y2="3" />
+          </svg>
+        </a>
+        <button class="settings-btn" id="settingsBtn" title="Settings">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3" />
+            <path
+              d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+          </svg>
+        </button>
+        <div class="status-dot" id="statusDot" title="Ready"></div>
+      </div>
+    </header>
+
+
+    <!-- Group: Features -->
+    <div class="section-label">Features</div>
+    <div class="actions">
+      <!-- 1. Select Area -->
+      <button id="selectArea" class="btn btn-primary">
+        <div class="btn-icon">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 9V5h4M15 5h4v4M19 15v4h-4M9 19H5v-4" />
+            <rect x="8" y="8" width="8" height="8" rx="1" stroke-dasharray="3 2" />
+          </svg>
+        </div>
+        <div class="btn-content">
+          <span class="btn-title">Selected Area <kbd class="hotkey-badge">Alt + S</kbd></span>
+          <span class="btn-desc">Copy selection or draw a box</span>
+        </div>
+        <div class="btn-arrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </div>
+      </button>
+
+      <!-- 2. Copy Text from Image -->
+      <button id="bulkOCR" class="btn btn-secondary">
+        <div class="btn-icon">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+            <circle cx="8.5" cy="8.5" r="1.5" />
+            <polyline points="21 15 16 10 5 21" />
+          </svg>
+        </div>
+        <div class="btn-content">
+          <span class="btn-title">Copy from Image <kbd class="hotkey-badge">Alt + I</kbd></span>
+          <span class="btn-desc">Draw a box around image to extract</span>
+        </div>
+        <div class="btn-arrow" id="ocrArrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </div>
+      </button>
+
+      <!-- 3. Copy Text from Link -->
+      <button id="copyLink" class="btn btn-secondary">
+        <div class="btn-icon">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+          </svg>
+        </div>
+        <div class="btn-content">
+          <span class="btn-title">Copy from Link <kbd class="hotkey-badge">Alt + L</kbd></span>
+          <span class="btn-desc">Click any link to copy its text</span>
+        </div>
+        <div class="btn-arrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </div>
+      </button>
+    </div>
+
+
+    <!-- ─── Separate History & Notes Nav Buttons ──────────────── -->
+    <div class="nav-tiles-grid">
+      <!-- 1. Copy History Button -->
+      <button class="nav-tile-btn" id="openHistory" title="View copied text history">
+        <div class="ntb-left">
+          <div class="ntb-icon history-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div class="ntb-text">
+            <span class="ntb-title">History</span>
+            <span class="ntb-sub" id="historySubtitle">Loading…</span>
+          </div>
+        </div>
+        <svg class="ntb-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2.5" stroke-linecap="round">
+          <polyline points="9 18 15 12 9 6" />
+        </svg>
+      </button>
+
+      <!-- 2. Custom Notes Button -->
+      <button class="nav-tile-btn" id="openNotes" title="View and write custom notes">
+        <div class="ntb-left">
+          <div class="ntb-icon notes-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="16" y1="13" x2="8" y2="13" />
+              <line x1="16" y1="17" x2="8" y2="17" />
+            </svg>
+          </div>
+          <div class="ntb-text">
+            <span class="ntb-title">Notes</span>
+            <span class="ntb-sub" id="notesSubtitle">Loading…</span>
+          </div>
+        </div>
+        <svg class="ntb-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2.5" stroke-linecap="round">
+          <polyline points="9 18 15 12 9 6" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- About Founder -->
+    <div class="founder-about">
+      <div class="founder-card-header">
+        <div class="founder-avatar-wrap">
+          <div class="founder-avatar">SG</div>
+          <span class="founder-online-dot" title="Active Developer"></span>
+        </div>
+        <div class="founder-identity">
+          <div class="founder-name-row">
+            <span class="founder-name">Sushant Gautam</span>
+            <span class="founder-badge-verified" title="Verified Founder">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+              </svg>
+            </span>
+          </div>
+          <span class="founder-role">Founder & Developer</span>
+        </div>
+        <button type="button" id="openTips" class="founder-tips-pill" title="View Tips & Shortcuts">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 18h6m-4 4h2m-5-8.5a6 6 0 1 1 8 0c-.5.8-1 1.7-1 2.5h-6c0-.8-.5-1.7-1-2.5z" />
+          </svg>
+          <span>Tips</span>
+        </button>
       </div>
 
-      <!-- API Key Input -->
-      <div class="setting-group" id="apiKeyGroup">
-        <label class="setting-label" for="googleApiKey">GEMINI API KEY</label>
-        <div class="input-wrap">
-          <input type="password" id="googleApiKey" class="input-field" placeholder="AIzaSy...">
-          <button class="eye-btn" id="toggleApiKeyVis" type="button" title="Show/Hide API Key">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-              <circle cx="12" cy="12" r="3"/>
+      <p class="founder-desc">
+        Crafting simple, powerful web tools to boost productivity.
+      </p>
+
+      <div class="founder-social-grid">
+        <a href="https://linkedin.com/in/iamushantgautam" target="_blank" rel="noopener noreferrer"
+          class="social-item social-linkedin" title="LinkedIn" aria-label="LinkedIn">
+          <svg width="20" height="20" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M0 18.338C0 8.216 8.474 0 18.92 0h218.16C247.53 0 256 8.216 256 18.338v219.327C256 247.79 247.53 256 237.08 256H18.92C8.475 256 0 247.791 0 237.668V18.335z"
+              fill="currentColor" />
+            <path
+              d="M77.796 214.238V98.986H39.488v115.252H77.8zM58.65 83.253c13.356 0 21.671-8.85 21.671-19.91-.25-11.312-8.315-19.915-21.417-19.915-13.111 0-21.674 8.603-21.674 19.914 0 11.06 8.312 19.91 21.169 19.91h.248zM99 214.238h38.305v-64.355c0-3.44.25-6.889 1.262-9.346 2.768-6.885 9.071-14.012 19.656-14.012 13.858 0 19.405 10.568 19.405 26.063v61.65h38.304v-66.082c0-35.399-18.896-51.872-44.099-51.872-20.663 0-29.738 11.549-34.78 19.415h.255V98.99H99.002c.5 10.812-.003 115.252-.003 115.252z"
+              fill="#ffffff" />
+          </svg>
+        </a>
+
+        <a href="https://github.com/Iamsushantgautam" target="_blank" rel="noopener noreferrer"
+          class="social-item social-github" title="GitHub" aria-label="GitHub">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+          </svg>
+        </a>
+
+        <a href="https://www.instagram.com/sushant.webdev" target="_blank" rel="noopener noreferrer"
+          class="social-item social-instagram" title="Instagram" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+          </svg>
+        </a>
+
+        <a href="https://sushant.online" target="_blank" rel="noopener noreferrer" class="social-item social-portfolio"
+          title="Portfolio Website" aria-label="Portfolio Website">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <line x1="2" y1="12" x2="22" y2="12" />
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Toast notification -->
+    <div class="toast" id="toast">
+      <svg class="toast-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12" />
+      </svg>
+      <span id="toastMsg">Copied!</span>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <span>Witcopy</span>
+      <span class="dot">·</span>
+      <span>Extract any text, anywhere</span>
+    </footer>
+
+    <!-- Settings Panel -->
+    <div class="settings-panel" id="settingsPanel">
+      <div class="sp-header">
+        <span class="sp-title">OCR Settings</span>
+        <button class="sp-close" id="settingsCloseBtn" title="Close">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="sp-content">
+        <!-- OCR Mode Switch -->
+        <div class="setting-group">
+          <label class="setting-label">OCR ENGINE</label>
+          <div class="toggle-container">
+            <span class="toggle-text">Gemini 2.5 Flash AI (OCR)</span>
+            <label class="switch">
+              <input type="checkbox" id="useGoogleOcr">
+              <span class="slider"></span>
+            </label>
+          </div>
+          <p class="setting-desc">Enabling Gemini 2.5 Flash yields superior speed and accuracy for non-English/complex
+            text.
+            Otherwise, falls back to offline Tesseract.js.</p>
+        </div>
+
+        <!-- API Key Input -->
+        <div class="setting-group" id="apiKeyGroup">
+          <label class="setting-label" for="googleApiKey">GEMINI API KEY</label>
+          <div class="input-wrap">
+            <input type="password" id="googleApiKey" class="input-field"
+              placeholder="Leave blank to use default API Key">
+            <button class="eye-btn" id="toggleApiKeyVis" type="button" title="Show/Hide API Key">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                <circle cx="12" cy="12" r="3" />
+              </svg>
+            </button>
+          </div>
+          <p class="setting-desc" id="apiKeyDesc">Stored securely in your local extension storage.</p>
+        </div>
+
+        <!-- API Verification Test -->
+        <div class="setting-group">
+          <button type="button" class="btn btn-secondary" id="testApiKeyBtn"
+            style="justify-content: center; font-weight: 600; padding: 7px 10px; font-size: 11.5px; margin-top: 2px;">
+            Test API Key
+          </button>
+          <div id="testApiStatus"
+            style="font-size: 11px; font-weight: 600; display: none; text-align: center; padding: 5px; border-radius: 6px; margin-top: 4px;">
+          </div>
+        </div>
+
+        <button class="btn btn-accent" id="saveSettingsBtn"
+          style="margin-top: 8px; justify-content: center; font-weight: 600;">Save Settings</button>
+      </div>
+    </div>
+
+    <!-- History & Notes Panel (Directly in Popup) -->
+    <div class="settings-panel" id="historyPanel">
+      <div class="sp-header">
+        <span class="sp-title" id="panelHeaderTitle">History & Notes</span>
+        <div style="display: flex; align-items: center; gap: 6px;">
+          <button type="button" class="sp-add-note-btn" id="openNoteComposerBtn" title="Create a custom note">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="5" x2="12" y2="19" />
+              <line x1="5" y1="12" x2="19" y2="12" />
+            </svg>
+            <span>Note</span>
+          </button>
+          <button class="sp-close" id="historyCloseBtn" title="Close">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
             </svg>
           </button>
         </div>
-        <p class="setting-desc">Stored securely in your local extension storage.</p>
       </div>
 
-      <!-- API Verification Test -->
-      <div class="setting-group">
-        <button type="button" class="btn btn-secondary" id="testApiKeyBtn" style="justify-content: center; font-weight: 600; padding: 7px 10px; font-size: 11.5px; margin-top: 2px;">
-          Test API Key
+      <!-- Segment Tabs (All, Copies, Notes) -->
+      <div class="panel-tabs">
+        <button type="button" class="panel-tab active" id="tabAll" data-tab="all">All</button>
+        <button type="button" class="panel-tab" id="tabCopies" data-tab="copies">Copies</button>
+        <button type="button" class="panel-tab" id="tabNotes" data-tab="notes">Notes</button>
+      </div>
+
+      <!-- Note Composer (Collapsible) -->
+      <div class="note-composer" id="noteComposer" style="display: none;">
+        <div class="nc-header">
+          <div style="display: flex; align-items: center; gap: 5px;">
+            <span class="nc-icon">📝</span>
+            <span class="nc-title" id="noteComposerTitle">New Custom Note</span>
+          </div>
+          <button type="button" class="nc-close" id="closeNoteComposerBtn" title="Cancel">✕</button>
+        </div>
+        <input type="text" id="noteTagInput" class="nc-input"
+          placeholder="Title or tag (e.g. Snippet, Code, Meeting)..." maxlength="50" autocomplete="off">
+        <textarea id="noteTextInput" class="nc-textarea" placeholder="Type or paste your custom note text here..."
+          rows="4"></textarea>
+        <div class="nc-actions">
+          <button type="button" class="nc-btn nc-btn-cancel" id="cancelNoteBtn">Cancel</button>
+          <button type="button" class="nc-btn nc-btn-save" id="saveNoteBtn">Save Note</button>
+        </div>
+      </div>
+
+      <!-- Search Box -->
+      <div class="search-box"
+        style="margin-bottom: 10px; display: flex; align-items: center; gap: 8px; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 6px 10px; background: var(--surface2);">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+          stroke-linecap="round" style="color: var(--text3); flex-shrink: 0;">
+          <circle cx="11" cy="11" r="8" />
+          <line x1="21" y1="21" x2="16.65" y2="16.65" />
+        </svg>
+        <input type="text" id="historySearch" placeholder="Search copies & notes…"
+          style="border: none; background: transparent; outline: none; font-size: 12px; flex: 1; color: var(--text1);"
+          autocomplete="off">
+      </div>
+
+      <!-- History List Wrap -->
+      <div class="history-list-wrap"
+        style="flex: 1; overflow-y: auto; margin-bottom: 10px; display: flex; flex-direction: column; gap: 8px;">
+        <div id="historyList" style="display: flex; flex-direction: column; gap: 8px;"></div>
+        <div class="empty-state" id="historyEmpty"
+          style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 10px; text-align: center; gap: 8px;">
+          <p style="font-size: 13px; font-weight: 600; color: var(--text2);">No copies or notes yet</p>
+          <p style="font-size: 11px; color: var(--text3);">Copied text and custom notes will appear here.</p>
+        </div>
+      </div>
+
+      <!-- Export Actions -->
+      <div class="export-actions" id="exportActions" style="display: none;">
+        <span class="export-label">Export:</span>
+        <button type="button" id="exportTxt" class="export-btn" title="Export as plain text">TXT</button>
+        <button type="button" id="exportJson" class="export-btn" title="Export as JSON file">JSON</button>
+        <button type="button" id="exportCsv" class="export-btn" title="Export as CSV spreadsheet">CSV</button>
+      </div>
+
+      <!-- Clear All Button -->
+      <button class="btn btn-secondary" id="clearAllBtn"
+        style="justify-content: center; color: var(--red); border-color: rgba(239,68,68,0.15); background: #fff5f5; font-weight: 600; padding: 8px;">
+        Clear All History
+      </button>
+
+      <!-- Custom Confirmation Modal Overlay -->
+      <div class="confirm-overlay" id="confirmOverlay">
+        <div class="confirm-box">
+          <span class="confirm-icon">⚠️</span>
+          <h3 class="confirm-title">Clear History?</h3>
+          <p class="confirm-text">This will permanently delete all your saved copies. This action cannot be undone.</p>
+          <div class="confirm-actions">
+            <button type="button" class="confirm-btn btn-cancel" id="confirmCancel">Cancel</button>
+            <button type="button" class="confirm-btn btn-confirm" id="confirmYes">Clear All</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Tips Panel (Directly in Popup) -->
+    <div class="settings-panel" id="tipsPanel">
+      <div class="sp-header">
+        <span class="sp-title">Tips & Tricks</span>
+        <button class="sp-close" id="tipsCloseBtn" title="Close">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
         </button>
-        <div id="testApiStatus" style="font-size: 11px; font-weight: 600; display: none; text-align: center; padding: 5px; border-radius: 6px; margin-top: 4px;"></div>
       </div>
-      
-      <button class="btn btn-accent" id="saveSettingsBtn" style="margin-top: 8px; justify-content: center; font-weight: 600;">Save Settings</button>
+
+      <div class="tips-list-wrap"
+        style="flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; padding-right: 2px;">
+        <div class="tip-point-card">
+          <div class="tpc-icon">✨</div>
+          <div class="tpc-content">
+            <span class="tpc-title">1. Direct Copy</span>
+            <span class="tpc-text">First select the text natively on any webpage to copy it instantly.</span>
+          </div>
+        </div>
+
+        <div class="tip-point-card">
+          <div class="tpc-icon">⬚</div>
+          <div class="tpc-content">
+            <span class="tpc-title">2. Selected Area</span>
+            <span class="tpc-text">Use the <strong>Selected Area</strong> tool and draw a box to copy any page text
+              block.</span>
+          </div>
+        </div>
+
+        <div class="tip-point-card">
+          <div class="tpc-icon">🔗</div>
+          <div class="tpc-content">
+            <span class="tpc-title">3. Copy Link Text</span>
+            <span class="tpc-text">Use the <strong>Copy from Link</strong> tool to click any hyperlink and copy its text
+              content.</span>
+          </div>
+        </div>
+
+        <div class="tip-point-card">
+          <div class="tpc-icon">🖼️</div>
+          <div class="tpc-content">
+            <span class="tpc-title">4. Copy from Image</span>
+            <span class="tpc-text">Use the <strong>Copy from Image</strong> tool to draw a box over any image area to
+              extract text.</span>
+          </div>
+        </div>
+
+        <div class="tip-point-card">
+          <div class="tpc-icon">🎥</div>
+          <div class="tpc-content">
+            <span class="tpc-title">5. Copy from Video</span>
+            <span class="tpc-text">Pause the video, click the <strong>Copy from Image</strong> tool, then draw a box
+              around the video text area.</span>
+          </div>
+        </div>
+
+        <div class="tip-point-card">
+          <div class="tpc-icon">🔑</div>
+          <div class="tpc-content">
+            <span class="tpc-title">6. New Google API Key</span>
+            <span class="tpc-text">If the API limit is reached, generate and enter a new Gemini API Key from
+              <strong>Google AI Studio</strong>.</span>
+          </div>
+        </div>
+      </div>
     </div>
+
   </div>
 
-  <!-- History Panel (Directly in Popup) -->
-  <div class="settings-panel" id="historyPanel">
-    <div class="sp-header">
-      <span class="sp-title">Copy History</span>
-      <button class="sp-close" id="historyCloseBtn" title="Close">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-        </svg>
-      </button>
-    </div>
-    
-    <!-- Search Box -->
-    <div class="search-box" style="margin-bottom: 10px; display: flex; align-items: center; gap: 8px; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 6px 10px; background: var(--surface2);">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" style="color: var(--text3); flex-shrink: 0;">
-        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-      </svg>
-      <input type="text" id="historySearch" placeholder="Search history…" style="border: none; background: transparent; outline: none; font-size: 12px; flex: 1; color: var(--text1);" autocomplete="off">
-    </div>
-
-    <!-- History List Wrap -->
-    <div class="history-list-wrap" style="flex: 1; overflow-y: auto; margin-bottom: 10px; display: flex; flex-direction: column; gap: 8px;">
-      <div id="historyList" style="display: flex; flex-direction: column; gap: 8px;"></div>
-      <div class="empty-state" id="historyEmpty" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 10px; text-align: center; gap: 8px;">
-        <p style="font-size: 13px; font-weight: 600; color: var(--text2);">No history yet</p>
-        <p style="font-size: 11px; color: var(--text3);">Text you copy will appear here.</p>
-      </div>
-    </div>
-
-    <!-- Export Actions -->
-    <div class="export-actions" id="exportActions" style="display: none;">
-      <span class="export-label">Export:</span>
-      <button type="button" id="exportTxt" class="export-btn" title="Export as plain text">TXT</button>
-      <button type="button" id="exportJson" class="export-btn" title="Export as JSON file">JSON</button>
-      <button type="button" id="exportCsv" class="export-btn" title="Export as CSV spreadsheet">CSV</button>
-    </div>
-
-    <!-- Clear All Button -->
-    <button class="btn btn-secondary" id="clearAllBtn" style="justify-content: center; color: var(--red); border-color: rgba(239,68,68,0.15); background: #fff5f5; font-weight: 600; padding: 8px;">
-      Clear All History
-    </button>
-
-    <!-- Custom Confirmation Modal Overlay -->
-    <div class="confirm-overlay" id="confirmOverlay">
-      <div class="confirm-box">
-        <span class="confirm-icon">⚠️</span>
-        <h3 class="confirm-title">Clear History?</h3>
-        <p class="confirm-text">This will permanently delete all your saved copies. This action cannot be undone.</p>
-        <div class="confirm-actions">
-          <button type="button" class="confirm-btn btn-cancel" id="confirmCancel">Cancel</button>
-          <button type="button" class="confirm-btn btn-confirm" id="confirmYes">Clear All</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <!-- Tips Panel (Directly in Popup) -->
-  <div class="settings-panel" id="tipsPanel">
-    <div class="sp-header">
-      <span class="sp-title">Tips & Tricks</span>
-      <button class="sp-close" id="tipsCloseBtn" title="Close">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-        </svg>
-      </button>
-    </div>
-    
-    <div class="tips-list-wrap" style="flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; padding-right: 2px;">
-      <div class="tip-point-card">
-        <div class="tpc-icon">✨</div>
-        <div class="tpc-content">
-          <span class="tpc-title">1. Direct Copy</span>
-          <span class="tpc-text">First select the text natively on any webpage to copy it instantly.</span>
-        </div>
-      </div>
-      
-      <div class="tip-point-card">
-        <div class="tpc-icon">⬚</div>
-        <div class="tpc-content">
-          <span class="tpc-title">2. Selected Area</span>
-          <span class="tpc-text">Use the <strong>Selected Area</strong> tool and draw a box to copy any page text block.</span>
-        </div>
-      </div>
-      
-      <div class="tip-point-card">
-        <div class="tpc-icon">🔗</div>
-        <div class="tpc-content">
-          <span class="tpc-title">3. Copy Link Text</span>
-          <span class="tpc-text">Use the <strong>Copy from Link</strong> tool to click any hyperlink and copy its text content.</span>
-        </div>
-      </div>
-      
-      <div class="tip-point-card">
-        <div class="tpc-icon">🖼️</div>
-        <div class="tpc-content">
-          <span class="tpc-title">4. Copy from Image</span>
-          <span class="tpc-text">Use the <strong>Copy from Image</strong> tool to draw a box over any image area to extract text.</span>
-        </div>
-      </div>
-      
-      <div class="tip-point-card">
-        <div class="tpc-icon">🎥</div>
-        <div class="tpc-content">
-          <span class="tpc-title">5. Copy from Video</span>
-          <span class="tpc-text">Pause the video, click the <strong>Copy from Image</strong> tool, then draw a box around the video text area.</span>
-        </div>
-      </div>
-
-      <div class="tip-point-card">
-        <div class="tpc-icon">🔑</div>
-        <div class="tpc-content">
-          <span class="tpc-title">6. New Google API Key</span>
-          <span class="tpc-text">If the API limit is reached, generate and enter a new Gemini API Key from <strong>Google AI Studio</strong>.</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</div>
-
-<script src="popup.js"></script>
+  <script src="env.js"></script>
+  <script src="popup.js"></script>
 </body>
+
 </html>
